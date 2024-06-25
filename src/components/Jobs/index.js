@@ -99,29 +99,29 @@ class Jobs extends Component {
     const {name, profileImageUrl, shortBio} = profileData
     return (
       <>
-        <div className='sm-searchbar-holder'>
+        <div className="sm-searchbar-holder">
           <input
-            type='search'
-            className='search-bar'
+            type="search"
+            className="search-bar"
             value={searchInput}
-            placeholder='Search'
+            placeholder="Search"
             onChange={this.searchChange}
             onKeyDown={this.searchKeyDown}
           />
           <button
-            type='button'
-            data-testid='searchButton'
-            className='search-button'
-            alt='search'
+            type="button"
+            data-testid="searchButton"
+            className="search-button"
+            alt="search"
             onClick={this.getJobDetails}
           >
-            <BsSearch className='search-icon' />
+            <BsSearch className="search-icon" />
           </button>
         </div>
-        <div className='success-profile-container'>
-          <img src={profileImageUrl} className='profile-image' alt='profile' />
-          <h1 className='profile-name'>{name}</h1>
-          <p className='profile-description'>{shortBio}</p>
+        <div className="success-profile-container">
+          <img src={profileImageUrl} className="profile-image" alt="profile" />
+          <h1 className="profile-name">{name}</h1>
+          <p className="profile-description">{shortBio}</p>
         </div>
       </>
     )
@@ -130,10 +130,10 @@ class Jobs extends Component {
   retryAgain = () => this.getProfileDetails()
 
   failureProfile = () => (
-    <div className='failure-profile-container'>
+    <div className="failure-profile-container">
       <button
-        type='button'
-        className='failure-retry-button'
+        type="button"
+        className="failure-retry-button"
         onClick={this.retryAgain}
       >
         Retry
@@ -190,40 +190,40 @@ class Jobs extends Component {
   successJobView = () => {
     const {jobData} = this.state
     return (
-      <ul className='job-success-container'>
+      <ul className="job-success-container">
         {jobData.map(eachValue => (
-          <li className='job-item' key={eachValue.id}>
-            <Link to={`/jobs/${eachValue.id}`} className='link'>
-              <div className='icon-container'>
+          <li className="job-item" key={eachValue.id}>
+            <Link to={`/jobs/${eachValue.id}`} className="link">
+              <div className="icon-container">
                 <img
                   src={eachValue.companyLogoUrl}
-                  className='company-logo'
-                  alt='company logo'
+                  className="company-logo"
+                  alt="company logo"
                 />
-                <div className='role-holder'>
-                  <h1 className='role'>{eachValue.title}</h1>
-                  <div className='rating-holder'>
-                    <BsStarFill className='star-image' />
-                    <p className='rating'>{eachValue.rating}</p>
+                <div className="role-holder">
+                  <h1 className="role">{eachValue.title}</h1>
+                  <div className="rating-holder">
+                    <BsStarFill className="star-image" />
+                    <p className="rating">{eachValue.rating}</p>
                   </div>
                 </div>
               </div>
-              <div className='job-middle-container'>
-                <div className='location-holder'>
-                  <div className='icon-holder'>
+              <div className="job-middle-container">
+                <div className="location-holder">
+                  <div className="icon-holder">
                     <MdLocationOn />
-                    <p className='icon-name'>{eachValue.location}</p>
+                    <p className="icon-name">{eachValue.location}</p>
                   </div>
-                  <div className='icon-holder'>
+                  <div className="icon-holder">
                     <MdWork />
-                    <p className='icon-name'>{eachValue.employmentType}</p>
+                    <p className="icon-name">{eachValue.employmentType}</p>
                   </div>
                 </div>
-                <p className='salary'>{eachValue.packagePerAnnum}</p>
+                <p className="salary">{eachValue.packagePerAnnum}</p>
               </div>
               <hr />
-              <h1 className='description'>Description</h1>
-              <p className='description-para'>{eachValue.jobDescription}</p>
+              <h1 className="description">Description</h1>
+              <p className="description-para">{eachValue.jobDescription}</p>
             </Link>
           </li>
         ))}
@@ -232,19 +232,19 @@ class Jobs extends Component {
   }
 
   failureJobView = () => (
-    <div className='main-failure-container'>
+    <div className="main-failure-container">
       <img
-        src='https://assets.ccbp.in/frontend/react-js/failure-img.png'
-        className='failure-image'
-        alt='failure view'
+        src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+        className="failure-image"
+        alt="failure view"
       />
-      <h1 className='failure-heading'>Oops! Something Went Wrong</h1>
-      <p className='failure-description'>
+      <h1 className="failure-heading">Oops! Something Went Wrong</h1>
+      <p className="failure-description">
         We cannot seem to find the page you are looking for
       </p>
       <button
-        type='button'
-        className='failure-retry-button'
+        type="button"
+        className="failure-retry-button"
         onClick={this.tryAgain}
       >
         Retry
@@ -253,9 +253,9 @@ class Jobs extends Component {
   )
 
   loaderView = () => (
-    <div className='main-loader-container'>
-      <div className='loader-container' data-testid='loader'>
-        <Loader type='ThreeDots' color='#ffffff' height='50' width='50' />
+    <div className="main-loader-container">
+      <div className="loader-container" data-testid="loader">
+        <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
       </div>
     </div>
   )
@@ -287,14 +287,14 @@ class Jobs extends Component {
   }
 
   noJobView = () => (
-    <div className='main-no-job-container'>
+    <div className="main-no-job-container">
       <img
-        src='https://assets.ccbp.in/frontend/react-js/no-jobs-img.png'
-        className='no-job-image'
-        alt='no jobs'
+        src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
+        className="no-job-image"
+        alt="no jobs"
       />
-      <h1 className='no-job-heading'>No Jobs Found</h1>
-      <p className='no-job-description'>
+      <h1 className="no-job-heading">No Jobs Found</h1>
+      <p className="no-job-description">
         We could not find any jobs. Try other filters
       </p>
     </div>
@@ -318,72 +318,72 @@ class Jobs extends Component {
   render() {
     const {searchInput, profileData} = this.state
     return (
-      <div className='main-jobs-container'>
+      <div className="main-jobs-container">
         <Header />
-        <div className='jobs-container'>
-          <div className='jobs-filter-container'>
+        <div className="jobs-container">
+          <div className="jobs-filter-container">
             {profileData !== null
               ? this.successProfile()
               : this.failureProfile()}
             <hr />
-            <h1 className='filter-name'>Type of Employment</h1>
-            <ul className='ul-list'>
+            <h1 className="filter-name">Type of Employment</h1>
+            <ul className="ul-list">
               {employmentTypesList.map(eachValue => (
                 <li
-                  className='check-box-holder'
+                  className="check-box-holder"
                   key={eachValue.employmentTypeId}
                 >
                   <input
-                    type='checkbox'
-                    className='check-box'
+                    type="checkbox"
+                    className="check-box"
                     id={eachValue.employmentTypeId}
                     value={eachValue.employmentTypeId}
                     onChange={this.checkboxEvent}
                   />
-                  <label htmlFor={eachValue.employmentTypeId} className='label'>
+                  <label htmlFor={eachValue.employmentTypeId} className="label">
                     {eachValue.label}
                   </label>
                 </li>
               ))}
             </ul>
             <hr />
-            <h1 className='filter-name'>Salary Range</h1>
-            <ul className='ul-list'>
+            <h1 className="filter-name">Salary Range</h1>
+            <ul className="ul-list">
               {salaryRangesList.map(eachValue => (
-                <li className='radio-holder' key={eachValue.salaryRangeId}>
+                <li className="radio-holder" key={eachValue.salaryRangeId}>
                   <input
-                    type='radio'
-                    className='radio'
+                    type="radio"
+                    className="radio"
                     id={eachValue.salaryRangeId}
                     value={eachValue.salaryRangeId}
-                    name='salary-radio'
+                    name="salary-radio"
                     onChange={this.radioEvent}
                   />
-                  <label htmlFor={eachValue.salaryRangeId} className='label'>
+                  <label htmlFor={eachValue.salaryRangeId} className="label">
                     {eachValue.label}
                   </label>
                 </li>
               ))}
             </ul>
           </div>
-          <div className='main-job-view-container'>
-            <div className='lg-searchbar-holder'>
+          <div className="main-job-view-container">
+            <div className="lg-searchbar-holder">
               <input
-                type='search'
-                className='search-bar'
+                type="search"
+                className="search-bar"
                 value={searchInput}
-                placeholder='Search'
+                placeholder="Search"
                 onChange={this.searchChange}
                 onKeyDown={this.searchKeyDown}
               />
               <button
-                type='button'
-                data-testid='searchButton'
-                alt='search'
-                className='search-button'
+                type="button"
+                data-testid="searchButton"
+                alt="search"
+                className="search-button"
                 onClick={this.getJobDetails}
               >
-                <BsSearch className='search-icon' />
+                <BsSearch className="search-icon" />
               </button>
             </div>
             {this.getJobView()}
